@@ -13,6 +13,8 @@ public interface ProductService {
     Page<ShoesProduct> listAll(int pageNum, String sortField, String sortDir) ;
     Page<ShoesProduct> listAll(String category, int pageNum);
     void showPhoto(HttpServletResponse response, Long id) throws IOException;
-    public ShoesProduct getShoesProduct(Long id);
-    public ShoesProduct save(ProductDto shoesProductDto);
+    ShoesProduct getShoesProduct(Long id);
+    ShoesProduct save(ProductDto shoesProductDto);
+    void deleteProduct(Long id);
+    ShoesProduct getProduct(Long id);
 }

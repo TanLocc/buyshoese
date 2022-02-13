@@ -53,7 +53,7 @@ public class UserController {
         model.addAttribute("title", "Sửa người dùng");
         User user =  userRepository.findById(Long.parseLong(id)).orElse(new User());
         if(StringUtils.isEmpty(user.getId())){
-            redirectAttributes.addFlashAttribute("message", "Sản phẩm không tồn tại");
+            redirectAttributes.addFlashAttribute("message", "User không tồn tại");
             return "redirect:/user";
         }
         UserDto userDto = modelMapper.map(user, UserDto.class);

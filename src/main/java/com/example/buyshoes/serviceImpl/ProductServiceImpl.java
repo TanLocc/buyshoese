@@ -60,6 +60,19 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+
+    @Override
+    public ShoesProduct getProduct(Long id) {
+        ShoesProduct shoesProduct = productRepository.getById(id);
+        return shoesProduct;
+    }
+
+    @Override
+    public void deleteProduct(Long id) {
+        ShoesProduct shoesProduct = getProduct(id);
+        productRepository.delete(shoesProduct);
+    }
+
     @Override
     public void showPhoto(HttpServletResponse response, Long id) throws IOException {
         response.setContentType("image/jpeg");

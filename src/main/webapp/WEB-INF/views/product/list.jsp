@@ -31,7 +31,7 @@
     <div class="container">
         <main>
             <div class="py-5 text-center">
-                <h2>Danh sách user</h2>
+                <h2>Danh sách sản phẩm</h2>
                 <br>
             </div>
             <a class="btn btn-primary" href="/product/add" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">

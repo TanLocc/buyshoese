@@ -152,4 +152,17 @@ public class ProductController {
         redirectAttributes.addFlashAttribute("message", "Thêm thành công");
         return "redirect:/product/admin";
     }
+
+    @DeleteMapping
+    @RequestMapping("delete/{id}")
+    public String deleteProduct(Model model, @PathVariable String id, RedirectAttributes redirectAttributes){
+        ShoesProduct shoesProduct =  productRepository.findById(Long.parseLong(id)).orElse(new ShoesProduct());
+        if(StringUtils.isEmpty(shoesProduct.getId())){
+            redirectAttributes.addFlashAttribute("message","Sản phẩm không tồn tại");
+            return "redirect:/product/admin";
+        }
+        productService.deleteProduct(Long.parseLong(id));
+        redirectAttributes.addFlashAttribute("message", "You have successfully deleted");
+        return "redirect:/product/admin";
+    }
 }
